@@ -1,0 +1,1709 @@
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.calculator.sh.swo
+	.calculator.sh.swp
+	calculator.sh
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % ls
+calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   calculator.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.calculator.sh.swo
+	.calculator.sh.swp
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git diff
+diff --git a/calculator.sh b/calculator.sh
+index 94a54f3..f16319d 100644
+--- a/calculator.sh
++++ b/calculator.sh
+@@ -1 +1 @@
+-a+b
++a+b+c
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git status         
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   calculator.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.calculator.sh.swo
+	.calculator.sh.swp
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % ls -ltra
+total 56
+drwxrwxr-x  34 root      admin   1088 29 Feb 07:55 ..
+-rw-------   1 yaswanth  admin  12288 29 Feb 09:13 .calculator.sh.swp
+-rw-------   1 yaswanth  admin  12288 29 Feb 09:14 .calculator.sh.swo
+-rw-r--r--   1 yaswanth  admin      6 29 Feb 09:23 calculator.sh
+drwxr-xr-x   6 yaswanth  admin    192 29 Feb 09:23 .
+drwxr-xr-x  10 yaswanth  admin    320 29 Feb 09:26 .git
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   calculator.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.calculator.sh.swo
+	.calculator.sh.swp
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add .
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -m "my first commit"
+[main (root-commit) c29d523] my first commit
+ Committer: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 1 insertion(+)
+ create mode 100644 .calculator.sh.swo
+ create mode 100644 .calculator.sh.swp
+ create mode 100644 calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit c29d52386133466684f7ec7583d002835aaadf08 (HEAD -> main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % pwd
+/Applications/gitdemo
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git remote add ""
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git remote add "https://github.com/Yaswanth2318/Calculator.git" 
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git remote add "Calculator" "https://github.com/Yaswanth2318/Calculator.git"
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git remote -v
+Calculator	https://github.com/Yaswanth2318/Calculator.git (fetch)
+Calculator	https://github.com/Yaswanth2318/Calculator.git (push)
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git clone https://github.com/Yaswanth2318/Calculator.git 
+Cloning into 'Calculator'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/yaswanth/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/yaswanth/.ssh/id_rsa
+Your public key has been saved in /Users/yaswanth/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:CCSmZ0y/R0ByHwSfPKgWtRRVE0hgB3AS6MLq88LRUfg yaswanth@Yaswanths-MacBook-Pro.local
+The key's randomart image is:
++---[RSA 3072]----+
+| .O+/O*o+.       |
+|.= & X.o .       |
+|+ = B B          |
+|.= + E o         |
+|o + o o S        |
+|.o . .           |
+|o .              |
+| =               |
+|  +.             |
++----[SHA256]-----+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % ls                                                      
+Calculator	calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim /Users/yaswanth/.ssh 
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % ls
+Calculator	calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % cd /Users/yaswanth/.ssh 
+(base) yaswanth@Yaswanths-MacBook-Pro .ssh % ls
+id_rsa		id_rsa.pub	known_hosts
+(base) yaswanth@Yaswanths-MacBook-Pro .ssh % git clone
+fatal: You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    --reject-shallow      don't clone shallow repository
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    --recursive ...       alias of --recurse-submodules
+    -j, --jobs <n>        number of submodules cloned in parallel
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --reference-if-able <repo>
+                          reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --shallow-since <time>
+                          create a shallow clone since a specific time
+    --shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --single-branch       clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --shallow-submodules  any cloned submodules will be shallow
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+    --server-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --filter <args>       object filtering
+    --also-filter-submodules
+                          apply partial clone filters to submodules
+    --remote-submodules   any cloned submodules will use their remote-tracking branch
+    --sparse              initialize sparse-checkout file to include only files at root
+    --bundle-uri <uri>    a URI for downloading bundles before fetching from origin remote
+
+(base) yaswanth@Yaswanths-MacBook-Pro .ssh % cd /Applications/gitdemo
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % ls
+Calculator	calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git diff
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add .
+warning: adding embedded git repository: Calculator
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> Calculator
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached Calculator
+hint: 
+hint: See "git help submodule" for more information.
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -m "my second version"
+[main fd1ed2f] my second version
+ Committer: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 4 insertions(+)
+ create mode 160000 Calculator
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (HEAD -> main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git checkour -b division
+git: 'checkour' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git checkout -b division
+Switched to a new branch 'division'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git branch
+* division
+  main
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % cd /gitdemo/division
+cd: no such file or directory: /gitdemo/division
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add .
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -m "my third version"
+On branch division
+nothing to commit, working tree clean
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (HEAD -> division, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -m "the third version"
+On branch division
+nothing to commit, working tree clean
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (HEAD -> division, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git checkout main
+Switched to branch 'main'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (HEAD -> main, division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log division
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (HEAD -> main, division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git cherry-pick fd1ed2f26b1ff7af16585fce5a27d94729f2e335 
+On branch main
+You are currently cherry-picking commit fd1ed2f.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit --allow-empty                
+[main 814de2c] my second version
+ Date: Thu Feb 29 11:14:28 2024 +0000
+ Committer: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo %  git checkout -b mergeExample
+Switched to a new branch 'mergeExample'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim Calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -am "demonstrate merge"
+On branch mergeExample
+nothing to commit, working tree clean
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (HEAD -> mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -am "demonstrate merge"
+On branch mergeExample
+nothing to commit, working tree clean
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log                           
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (HEAD -> mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git checkout main
+Switched to branch 'main'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git checkout -b rebaseExample
+Switched to a new branch 'rebaseExample'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add .
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -m "percentage"
+[rebaseExample 4cf0387] percentage
+ Committer: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 3 insertions(+)
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit 4cf038747c00dbe4fcc7c94098bfbefff114c43b (HEAD -> rebaseExample)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ^X
+commit 4cf038747c00dbe4fcc7c94098bfbefff114c43b (HEAD -> rebaseExample)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample, main)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git checkout main
+Switched to branch 'main'
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % vim calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add .
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git add calculator.sh
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git commit -m "test commit"
+On branch main
+nothing to commit, working tree clean
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git merge mergeExample
+Already up to date.
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (HEAD -> main, mergeExample)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git rebase rebaseExample
+Successfully rebased and updated refs/heads/main.
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git log
+commit 4cf038747c00dbe4fcc7c94098bfbefff114c43b (HEAD -> main, rebaseExample)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 12:12:22 2024 +0000
+
+    percentage
+
+commit 814de2c811fb9d850a1ad156671ccfbae238fc55 (mergeExample)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit fd1ed2f26b1ff7af16585fce5a27d94729f2e335 (division)
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 11:14:28 2024 +0000
+
+    my second version
+
+commit c29d52386133466684f7ec7583d002835aaadf08
+Author: Yaswanth <yaswanth@Yaswanths-MacBook-Pro.local>
+Date:   Thu Feb 29 09:42:42 2024 +0000
+
+    my first commit
+(base) yaswanth@Yaswanths-MacBook-Pro gitdemo % git rebase rebaseExample
